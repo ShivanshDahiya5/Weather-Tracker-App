@@ -1,4 +1,4 @@
-/* body {
+body {
     font-family: Arial, sans-serif;
     background: linear-gradient(135deg, #969798, #ddf0ec);
     height: 100vh;
@@ -46,7 +46,7 @@ button:hover {
     transform: scale(1.05);
 }
 
-#result {
+/* #result {
     margin-top: 20px;
     color: white;
     font-size: 18px;
