@@ -1,32 +1,32 @@
-// const apiKey = "d7373c8b7a93dd1b0ae077c9002b39fc";
+const apiKey = "d7373c8b7a93dd1b0ae077c9002b39fc";
 
-// changeColor.addEventListener("Click", changeColor);
+changeColor.addEventListener("Click", changeColor);
 
-// async function getWeather() {
-//     const cityName = document.getElementById("city").value.trim();
-//     const resultDiv = document.getElementById("result");
-//     const errorDiv = document.getElementById("error");
+async function getWeather() {
+    const cityName = document.getElementById("city").value.trim();
+    const resultDiv = document.getElementById("result");
+    const errorDiv = document.getElementById("error");
     
-//     resultDiv.innerHTML = "";
-//     errorDiv.innerHTML = "";
+    resultDiv.innerHTML = "";
+    errorDiv.innerHTML = "";
 
-//     if (cityName === "") {
-//         errorDiv.innerHTML = "⚠ Please enter a city name";
-//         return;
-//     }   
-//     try {
+    if (cityName === "") {
+        errorDiv.innerHTML = "⚠ Please enter a city name";
+        return;
+    }   
+    try {
 
-//         const response = await fetch(
-//             `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
-//         );
+        const response = await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}&units=metric`
+        );
 
-//         if (!response.ok) {
-//             throw new Error("City not found");
-//         }
+        if (!response.ok) {
+            throw new Error("City not found");
+        }
 
-//         const data = await response.json();
+        const data = await response.json();
 
-//         resultDiv.innerHTML = `
+        resultDiv.innerHTML = `
 
 // <p><b>${data.name}</b></p>
 // <p>🌡 Temperature: ${data.main.temp} °C</p>
