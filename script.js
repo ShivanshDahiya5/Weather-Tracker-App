@@ -32,47 +32,47 @@ async function getWeather() {
 // <p>🌡 Temperature: ${data.main.temp} °C</p>
 // <p>🌥 Condition: ${data.weather[0].description}</p>
 // `;
-//         saveHistory(cityName);
-//     } catch (error) {
-//         errorDiv.innerHTML = "❌ " + error.message;
-//     }
-// }
+        saveHistory(cityName);
+    } catch (error) {
+        errorDiv.innerHTML = "❌ " + error.message;
+    }
+}
 
-// function saveHistory(city) {
-//     let cities = JSON.parse(localStorage.getItem("cities")) || [];
+function saveHistory(city) {
+    let cities = JSON.parse(localStorage.getItem("cities")) || [];
 
-//     if (!cities.includes(city)) {
-//         cities.push(city);
-//         localStorage.setItem("cities", JSON.stringify(cities));
-//     }
+    if (!cities.includes(city)) {
+        cities.push(city);
+        localStorage.setItem("cities", JSON.stringify(cities));
+    }
 
-//     loadHistory();
-// }
+    loadHistory();
+}
 
-// function loadHistory() {
-//     const historyDiv = document.getElementById("history");
-//     historyDiv.innerHTML = "";
+function loadHistory() {
+    const historyDiv = document.getElementById("history");
+    historyDiv.innerHTML = "";
 
-//     let cities = JSON.parse(localStorage.getItem("cities")) || [];
+    let cities = JSON.parse(localStorage.getItem("cities")) || [];
 
-//     for (let i = 0; i < cities.length; i++) {
+    for (let i = 0; i < cities.length; i++) {
 
-//         let span = document.createElement("span");
+        let span = document.createElement("span");
 
-//         span.innerText = cities[i];
-//         span.className = "history-item";
-//         span.onclick = function () {
+        span.innerText = cities[i];
+        span.className = "history-item";
+        span.onclick = function () {
 
-//             document.getElementById("city").value = cities[i];
-//             getWeather();
-//         };
-//         historyDiv.appendChild(span);
-//     }
-// }
+            document.getElementById("city").value = cities[i];
+            getWeather();
+        };
+        historyDiv.appendChild(span);
+    }
+}
 
-// function clearHistory() {
-//     localStorage.removeItem("cities");
-//     document.getElementById("history").innerHTML = "";
-// }
+function clearHistory() {
+    localStorage.removeItem("cities");
+    document.getElementById("history").innerHTML = "";
+}
 
-// loadHistory();
+loadHistory();
